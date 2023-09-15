@@ -16,11 +16,14 @@ public enum Mensaje {
     TITULO_INVALIDO_LOCAL("El título de la oferta no puede sobrepasar los 20 caracteres."),
     FECHA_INVALIDA("La fecha de inicio no puede ser mayor que la fecha de fin."),
     FORMATO_FECHA_INVALIDO("La fecha tiene que tener el formato 'dd/MM/yyyy'..."),
-    COSTO_PERSONA_INVALIDO("El costo por persona no puede ser negativo.");
+    COSTO_PERSONA_INVALIDO("El costo no puede ser negativo."),
 
 
+    NUMERO_PERSONAS_INVALIDO("El número de personas por reserva no puede ser mayor a 4."),
 
 
+    NOMBRE_SECRETARIA_INVALIDO_70("El numero de caracteres permitidos es de 70."),
+    NOMBRE_SECRETARIA_INVALIDO_10("El numero de caracteres no puede ser menor a 10.");
 
 
     private  String mensaje;

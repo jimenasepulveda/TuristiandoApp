@@ -1,5 +1,6 @@
 package org.example.validaciones;
 
+import org.example.utilidades.Mensaje;
 import org.example.utilidades.Util;
 
 import java.time.LocalDate;
@@ -13,7 +14,7 @@ public class ReservaValidacion {
 
     public boolean validarFormatoFecha(String fecha) throws Exception{
         if (!util.validarExpresionRegular(fecha, "\\b(\\d{2})/(\\d{2})/(\\d{4})\\b")){
-            throw new Exception("La fecha tiene que tener el formato 'dd/MM/yyyy'.");
+            throw new Exception(Mensaje.FORMATO_FECHA_INVALIDO.getMensaje());
         }else {
             return true;
         }
@@ -21,7 +22,7 @@ public class ReservaValidacion {
 
     public boolean validarNumeroPersonas (Integer numeroPersonas) throws  Exception{
         if (numeroPersonas > 4){
-            throw new Exception("El número de personas por reserva no puede ser mayor a 4.");
+            throw new Exception(Mensaje.NUMERO_PERSONAS_INVALIDO.getMensaje());
         }else {
             return true;
         }

@@ -23,5 +23,3 @@ public class Util {
 
     public DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 }
-//Crear una funcion que se llame generar Id => devuelva un Integer aleatorio de 0-500, para cuando se cree un usuario,
-// local, oferta, reserva se cree un id aleatoriamente

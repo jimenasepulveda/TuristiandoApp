@@ -57,4 +57,25 @@ class OfertaValidacionTest {
         Assertions.assertTrue(respuesta);
     }
 
+    @Test
+    public void validarFormatoFechasFuncionaIncorrectamente(){
+        String formatoFechaPrueba = "2023/08/16";
+        Exception respuesta = Assertions.assertThrows(Exception.class,()->this.validacion.validarFormatoFechas(formatoFechaPrueba));
+        Assertions.assertEquals(Mensaje.FORMATO_FECHA_INVALIDO.getMensaje(), respuesta.getMessage());
+    }
+
+    @Test
+    public void validarCostoPersonaFuncionaCorrectamente(){
+        Double costoPersonaPrueba = 6.000;
+        Boolean respuesta = Assertions.assertDoesNotThrow(()->this.validacion.validarCostoPersona(costoPersonaPrueba));
+        Assertions.assertTrue(respuesta);
+    }
+
+
+    @Test
+    public void validarCostoPersonaFuncionaIncorrectamente(){
+        Double costoPersonaPrueba = -10.000;
+        Exception respuesta = Assertions.assertThrows(Exception.class,()->this.validacion.validarCostoPersona(costoPersonaPrueba));
+        Assertions.assertEquals(Mensaje.COSTO_PERSONA_INVALIDO.getMensaje(), respuesta.getMessage());
+    }
 }
